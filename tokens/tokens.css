@@ -1,0 +1,104 @@
+/* ==========================================================================
+   MOMO Workspace — Design Tokens (CSS Custom Properties)
+   Source of truth: DESIGN.md §2–§4, §6
+   Theme: Light only (v1.0)
+   ========================================================================== */
+
+:root {
+  /* ---------- Color: surfaces ---------- */
+  --bg-canvas:  #F7F6F2;   /* warm off-white page canvas */
+  --bg-card:    #FFFFFF;   /* primary dashboard card */
+  --bg-soft:    #F1F4F1;   /* nested panels and quiet fields */
+
+  /* ---------- Color: text ---------- */
+  --text-primary:   #20292A;  /* main text / data values — 14.9:1 on card */
+  --text-secondary: #667377;  /* secondary labels — 4.9:1 on card, 4.5:1 on canvas */
+
+  /* ---------- Color: lines ---------- */
+  --border-soft:   #E7EAE6;  /* decorative hairline only (1.2:1 — never the sole signal) */
+  --border-strong: #7F8C86;  /* meaningful borders: inputs, toggles, chart axes — 3.5:1 on card */
+
+  /* ---------- Color: action ---------- */
+  --action-dark: #235E4E;  /* strong text links, focus ring, active state — 7.6:1 on card */
+  --action-mint: #A8E9D1;  /* main filled button surface */
+  --on-action-mint: #20292A;  /* text/icon on mint — 10.8:1 */
+
+  /* ---------- Color: pastel accents (grouping, never text) ---------- */
+  --accent-lavender: #CEC6FA;  /* calendar and progress groups */
+  --accent-peach:    #FFD9C5;  /* reminders / scheduled events */
+  --accent-butter:   #FFEDB4;  /* milestones / celebration */
+  --accent-blue:     #CBE5F7;  /* insights / analytics illustration */
+  --on-accent: #20292A;        /* text on any pastel accent — 9.3:1 or better */
+
+  /* ---------- Color: status ---------- */
+  --error:   #AD3B3B;  /* error text — 6.1:1 on card. Always pair with an icon or word */
+  --success: #27694F;  /* positive feedback — 6.5:1 on card */
+
+  /* ---------- Typography: families ---------- */
+  --font-heading: "LINE Seed Sans KR", "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-body:    "Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
+  --font-display: "Fredoka", "LINE Seed Sans KR", system-ui, sans-serif;  /* Latin brand only */
+  --font-number:  "Plus Jakarta Sans", "Pretendard Variable", Pretendard, system-ui, sans-serif;
+
+  /* ---------- Typography: scale (size / line-height) ---------- */
+  --t-greeting: 32px; --lh-greeting: 40px;  /* page greeting */
+  --t-section:  20px; --lh-section:  28px;  /* section title */
+  --t-card:     16px; --lh-card:     24px;  /* card title */
+  --t-body:     14px; --lh-body:     22px;  /* body */
+  --t-caption:  12px; --lh-caption:  18px;  /* caption */
+  --t-kpi:      32px; --lh-kpi:      38px;  /* KPI number */
+  --t-button:   14px; --lh-button:   20px;  /* button label */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+
+  /* ---------- Spacing: 8px rhythm ---------- */
+  --space-1:  8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+
+  /* ---------- Radius ---------- */
+  --radius-card:  20px;   /* desktop cards */
+  --radius-input: 12px;   /* small inputs and buttons */
+  --radius-pill: 999px;   /* tags and chips */
+
+  /* ---------- Layout ---------- */
+  --layout-max:            1520px;
+  --layout-page-padding:     32px;
+  --sidebar-width:          224px;
+  --sidebar-width-collapsed: 76px;
+  --header-height:           72px;
+  --tap-target:              44px;   /* minimum interactive target */
+
+  /* ---------- Elevation ---------- */
+  --shadow-card:  0 1px 2px rgba(32, 41, 42, 0.04);
+  --shadow-lift:  0 6px 20px rgba(32, 41, 42, 0.08);   /* hover only */
+  --shadow-sheet: 0 12px 40px rgba(32, 41, 42, 0.12);  /* side sheet, modal */
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --dur-hover:    200ms;   /* card lift */
+  --dur-panel:    280ms;   /* side panel slide */
+  --dur-entry:    420ms;   /* card entrance */
+  --dur-complete: 500ms;   /* checkbox tick + row transition */
+  --dur-counter:  800ms;   /* KPI count-up */
+  --lift-hover: -3px;
+}
+
+/* 모션 감소 설정을 켠 사용자: 장식 애니메이션만 끄고 기능은 그대로 둔다 (DESIGN.md §6) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-hover: 0ms;
+    --dur-panel: 0ms;
+    --dur-entry: 0ms;
+    --dur-complete: 0ms;
+    --dur-counter: 0ms;
+    --lift-hover: 0px;
+  }
+}
